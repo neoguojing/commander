@@ -1,4 +1,4 @@
-module commander
+module github.com/neoguojing/commander
 
 go 1.15
 
