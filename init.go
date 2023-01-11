@@ -5,12 +5,13 @@ import (
 	"io/ioutil"
 	"log"
 	"os"
-
+	"path/filepath"
 	"github.com/spf13/cobra"
 )
 
 var (
-	unixSockPath = fmt.Sprintf("/tmp/%s.sock", os.Args[0])
+	
+	unixSockPath = filepath.Join("/tmp/",fmt.Sprintf("%s.sock", os.Args[0]))
 )
 
 const (
