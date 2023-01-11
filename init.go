@@ -6,12 +6,12 @@ import (
 	"log"
 	"os"
 	"path/filepath"
+
 	"github.com/spf13/cobra"
 )
 
 var (
-	
-	unixSockPath = filepath.Join("/tmp/",fmt.Sprintf("%s.sock", os.Args[0]))
+	unixSockPath = fmt.Sprintf("/tmp/%s.sock", filepath.Base(os.Args[0]))
 )
 
 const (
@@ -36,7 +36,7 @@ var (
 )
 
 func init() {
-	rootCmd.Use = os.Args[0]
+	rootCmd.Use = filepath.Base(os.Args[0])
 	rootCmd.AddCommand(stopCmd)
 }
 
