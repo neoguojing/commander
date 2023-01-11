@@ -1,9 +1,9 @@
+//go:build linux
 // +build linux
 
 package commander
 
 import (
-	"fmt"
 	"log"
 	"net"
 	"net/http"
@@ -13,7 +13,7 @@ import (
 // NewIPCServer ...
 func NewIPCServer() *IPCServer {
 	uinxServ := &IPCServer{
-		UnixSockPath: fmt.Sprintf("/tmp/%s.sock", os.Args[0]),
+		UnixSockPath: unixSockPath,
 	}
 
 	return uinxServ
