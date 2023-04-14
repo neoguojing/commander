@@ -24,6 +24,15 @@ func WithDescribe(desc string) Option {
 	}
 }
 
+// WithFlag ...
+func WithFlag(name, shorthand, usage string, defaultValue string) Option {
+	return func(cmd *cobra.Command) {
+		cmd.Flags().StringP(name, shorthand, defaultValue, usage)
+	}
+}
+
+
+
 // Commander ...
 type Commander struct {
 	servers []IServer
